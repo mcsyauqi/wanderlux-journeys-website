@@ -39,6 +39,7 @@ export default function ItineraryPage({ params }: PageProps) {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
 
@@ -212,7 +213,7 @@ export default function ItineraryPage({ params }: PageProps) {
                   {itinerary.days.length <
                     parseInt(itinerary.duration.split(" ")[0]) && (
                     <div className="bg-sand p-6 text-center">
-                      <p className="text-navy-light font-body italic">
+                      <p className="text-navy-light font-body">
                         Full day-by-day itinerary available upon inquiry.
                         Contact us for the complete experience details.
                       </p>
@@ -316,6 +317,7 @@ export default function ItineraryPage({ params }: PageProps) {
           alt={itinerary.name}
           fill
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-navy/80" />
         <div className="container relative text-center">

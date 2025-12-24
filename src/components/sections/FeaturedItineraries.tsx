@@ -27,7 +27,7 @@ export default function FeaturedItineraries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white overflow-hidden"
+              className="group bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <Link href={`/itineraries/${itinerary.slug}`}>
                 {/* Image */}
@@ -37,6 +37,7 @@ export default function FeaturedItineraries() {
                     alt={itinerary.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
 

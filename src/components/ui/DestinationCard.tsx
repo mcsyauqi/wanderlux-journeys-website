@@ -32,7 +32,7 @@ export default function DestinationCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`relative overflow-hidden group cursor-pointer ${sizeClasses[size]}`}
+      className={`relative overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-shadow duration-300 ${sizeClasses[size]}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -51,6 +51,7 @@ export default function DestinationCard({
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            unoptimized
           />
         </motion.div>
 

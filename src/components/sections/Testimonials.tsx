@@ -44,7 +44,7 @@ export default function Testimonials() {
             </motion.div>
 
             {/* Testimonial Card */}
-            <div className="bg-white pt-12 pb-8 px-8 md:px-16 text-center shadow-lg">
+            <div className="bg-white pt-12 pb-8 px-8 md:px-16 text-center shadow-xl border border-sand-medium">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentTestimonial.id}
@@ -65,7 +65,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Quote */}
-                  <blockquote className="text-xl md:text-2xl font-heading text-navy mb-8 italic leading-relaxed">
+                  <blockquote className="text-xl md:text-2xl font-heading text-navy mb-8 leading-relaxed">
                     &ldquo;{currentTestimonial.quote}&rdquo;
                   </blockquote>
 
@@ -82,6 +82,7 @@ export default function Testimonials() {
                         alt={currentTestimonial.name}
                         fill
                         className="object-cover"
+                        unoptimized
                       />
                     </div>
                     <div className="text-left">

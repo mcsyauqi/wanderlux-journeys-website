@@ -92,6 +92,7 @@ export default function AboutPage() {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
 
@@ -112,7 +113,7 @@ export default function AboutPage() {
             >
               We Don&apos;t Plan Trips.
               <br />
-              <span className="italic text-gold">We Craft Experiences.</span>
+              <span className="text-gold">We Craft Experiences.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -188,6 +189,7 @@ export default function AboutPage() {
                   alt="Travel adventure"
                   fill
                   className="object-cover"
+                  unoptimized
                 />
               </div>
               {/* Decorative element */}
@@ -252,6 +254,7 @@ export default function AboutPage() {
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -289,7 +292,7 @@ export default function AboutPage() {
                 className="bg-white/10 backdrop-blur-sm p-8"
               >
                 <Quote className="text-gold mb-4" size={32} />
-                <p className="text-white font-body italic mb-6 leading-relaxed">
+                <p className="text-white font-body mb-6 leading-relaxed">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 mb-4">
@@ -308,6 +311,7 @@ export default function AboutPage() {
                       alt={testimonial.name}
                       fill
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
                   <div>
@@ -330,6 +334,7 @@ export default function AboutPage() {
           alt="Mountain landscape"
           fill
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-navy/70" />
 

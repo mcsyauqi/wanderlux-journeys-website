@@ -47,6 +47,7 @@ export default function DestinationContent({
             fill
             className="object-cover"
             priority
+            unoptimized
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
@@ -210,6 +211,7 @@ export default function DestinationContent({
                     alt={`${destination.name} gallery`}
                     fill
                     className="object-cover"
+                    unoptimized
                   />
                   <button
                     onClick={() =>
@@ -246,6 +248,7 @@ export default function DestinationContent({
                         alt={`${destination.name} ${index + 1}`}
                         fill
                         className="object-cover"
+                        unoptimized
                       />
                     </button>
                   ))}
@@ -343,6 +346,7 @@ export default function DestinationContent({
           alt={destination.name}
           fill
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-navy/80" />
         <div className="container relative text-center">

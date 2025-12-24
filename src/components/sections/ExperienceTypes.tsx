@@ -57,6 +57,7 @@ export default function ExperienceTypes() {
                 alt={activeExperience.name}
                 fill
                 className="object-cover"
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
             </motion.div>
@@ -103,9 +104,9 @@ export default function ExperienceTypes() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     onClick={() => setActiveExperience(experience)}
-                    className={`w-full flex items-center gap-6 p-6 text-left transition-all border ${
+                    className={`w-full flex items-center gap-6 p-6 text-left transition-all border shadow-md hover:shadow-lg ${
                       isActive
-                        ? "bg-teal border-teal"
+                        ? "bg-teal border-teal shadow-teal/20"
                         : "bg-white border-sand-medium hover:border-teal"
                     }`}
                   >

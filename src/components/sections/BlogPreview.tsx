@@ -35,7 +35,7 @@ export default function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
+              className="group bg-ivory p-4 hover:shadow-lg transition-shadow duration-300"
             >
               <Link href={`/blog/${post.slug}`}>
                 {/* Image */}
@@ -45,6 +45,7 @@ export default function BlogPreview() {
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    unoptimized
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1.5 bg-teal text-white text-xs font-body font-semibold uppercase tracking-wider">

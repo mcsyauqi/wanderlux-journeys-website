@@ -66,6 +66,7 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/30 to-navy/70" />
         </motion.div>
@@ -89,10 +90,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white font-heading font-light mb-6"
+            className="text-white font-heading font-medium mb-6"
           >
             Where Will Your Story{" "}
-            <span className="italic font-normal">Unfold</span>?
+            <span className="text-gold">Unfold</span>?
           </motion.h1>
 
           {/* Subheading */}

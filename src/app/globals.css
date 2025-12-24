@@ -51,10 +51,6 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Fonts */
-  --font-heading: var(--font-cormorant);
-  --font-body: var(--font-source-sans);
 }
 
 /* Reset & Base */
@@ -71,43 +67,59 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Typography */
+/* Typography - FIXED: removed italic styling, consistent weights */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  font-style: normal;
   line-height: 1.2;
   color: var(--navy-dark);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
 }
 
 h4 {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
 }
 
 p {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400;
+  font-style: normal;
   color: var(--navy-medium);
+}
+
+/* Font utility classes */
+.font-heading {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-style: normal;
+}
+
+.font-body {
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
 }
 
 /* Custom Utilities */
@@ -134,9 +146,10 @@ p {
   padding: 0.875rem 2rem;
   background: var(--teal-primary);
   color: white;
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: none;
@@ -158,9 +171,10 @@ p {
   padding: 0.875rem 2rem;
   background: transparent;
   color: var(--gold-accent);
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 2px solid var(--gold-accent);
@@ -181,9 +195,10 @@ p {
   padding: 0.875rem 2rem;
   background: transparent;
   color: white;
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 2px solid white;
@@ -207,6 +222,18 @@ p {
 /* Section Styling */
 .section {
   padding: var(--section-padding) 0;
+}
+
+/* Section centered content */
+.section-header-centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Better spacing utilities */
+.space-y-section > * + * {
+  margin-top: 3rem;
 }
 
 /* Card Styles */
@@ -239,22 +266,20 @@ p {
 
 /* Decorative elements */
 .section-tag {
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold-accent);
 }
 
-/* Smooth image loading */
+/* Image Styles - Better handling */
 img {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-img[data-loading="true"] {
-  opacity: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Custom Scrollbar */
@@ -297,8 +322,10 @@ img[data-loading="true"] {
 
 /* Form Styles */
 input, textarea, select {
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
   padding: 1rem 1.25rem;
   border: 1px solid var(--sand-medium);
   background: white;
@@ -316,6 +343,7 @@ input:focus, textarea:focus, select:focus {
 input::placeholder, textarea::placeholder {
   color: var(--navy-light);
   opacity: 0.6;
+  font-style: normal;
 }
 
 /* Animation Classes */
@@ -389,4 +417,12 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--teal-primary);
   outline-offset: 2px;
+}
+
+/* Image placeholder/loading state */
+.image-placeholder {
+  background: linear-gradient(135deg, var(--sand-light), var(--sand-medium));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

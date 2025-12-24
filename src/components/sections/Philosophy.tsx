@@ -46,6 +46,7 @@ export default function Philosophy() {
           alt="Luxury travel background"
           fill
           className="object-cover scale-125"
+          unoptimized
         />
       </motion.div>
       <div className="absolute inset-0 bg-navy/85" />
@@ -72,7 +73,7 @@ export default function Philosophy() {
             >
               We Don&apos;t Plan Trips.
               <br />
-              <span className="italic text-gold">We Craft Experiences.</span>
+              <span className="text-gold">We Craft Experiences.</span>
             </motion.h2>
 
             <motion.div
@@ -147,7 +148,7 @@ export default function Philosophy() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white/10 backdrop-blur-sm p-6 border border-white/10"
+                className="bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-gold flex items-center justify-center flex-shrink-0">

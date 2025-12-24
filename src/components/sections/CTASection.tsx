@@ -16,6 +16,7 @@ export default function CTASection() {
           alt="Tropical beach destination"
           fill
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/70" />
       </div>
@@ -41,7 +42,7 @@ export default function CTASection() {
               className="text-white mb-6"
             >
               Ready to Experience the{" "}
-              <span className="italic text-gold">Extraordinary</span>?
+              <span className="text-gold">Extraordinary</span>?
             </motion.h2>
 
             <motion.p
