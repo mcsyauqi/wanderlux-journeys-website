@@ -26,10 +26,22 @@
   --accent: var(--gold-accent);
   --muted: var(--sand-light);
 
-  /* Spacing */
-  --section-padding: clamp(5rem, 10vw, 8rem);
-  --container-max: 1400px;
-  --container-padding: clamp(1.5rem, 5vw, 4rem);
+  /* Spacing - Simplified */
+  --section-padding-y: clamp(4rem, 8vw, 7rem);
+  --container-max: 1280px;
+  --container-padding-x: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding-x: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding-x: 3rem;
+  }
 }
 
 @theme inline {
@@ -74,7 +86,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography - FIXED: removed italic styling, consistent weights */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-weight: 600;
@@ -212,63 +224,19 @@ p {
   color: var(--navy-dark);
 }
 
-/* Container */
+/* Container - Single source of truth for horizontal padding */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
   width: 100%;
 }
 
-/* Ensure proper padding on all screen sizes */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-}
-
-/* Section Styling */
+/* Section Styling - Only vertical padding */
 .section {
-  padding: var(--section-padding) 0;
-}
-
-/* Ensure sections have proper internal padding */
-.section .container {
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
-
-/* Section centered content */
-.section-header-centered {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Better spacing utilities */
-.space-y-section > * + * {
-  margin-top: 3rem;
-}
-
-/* Card Styles */
-.destination-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  aspect-ratio: 3/4;
-  cursor: pointer;
-}
-
-.destination-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(30, 58, 95, 0.9) 100%);
-  transition: opacity 0.4s ease;
-}
-
-.destination-card:hover::after {
-  background: linear-gradient(180deg, transparent 30%, rgba(30, 58, 95, 0.95) 100%);
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
 }
 
 /* Gold accent line */
@@ -289,7 +257,7 @@ p {
   color: var(--gold-accent);
 }
 
-/* Image Styles - Better handling */
+/* Image Styles */
 img {
   max-width: 100%;
   height: auto;
@@ -317,12 +285,20 @@ img {
 /* Horizontal scroll container */
 .horizontal-scroll {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 1rem;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+@media (min-width: 768px) {
+  .horizontal-scroll {
+    gap: 2rem;
+  }
 }
 
 .horizontal-scroll::-webkit-scrollbar {
@@ -356,7 +332,7 @@ input:focus, textarea:focus, select:focus {
 
 input::placeholder, textarea::placeholder {
   color: var(--navy-light);
-  opacity: 0.6;
+  opacity: 0.7;
   font-style: normal;
 }
 

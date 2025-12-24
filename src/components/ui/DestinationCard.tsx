@@ -21,7 +21,7 @@ export default function DestinationCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const sizeClasses = {
-    default: "aspect-[3/4] w-[300px] md:w-[350px]",
+    default: "aspect-[3/4] w-[280px] md:w-[320px]",
     large: "aspect-[3/4] w-full",
     wide: "aspect-[16/9] w-full",
   };
@@ -59,7 +59,7 @@ export default function DestinationCard({
         <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
 
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+        <div className="absolute inset-0 flex flex-col justify-end p-6">
           {/* Location Tag */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}

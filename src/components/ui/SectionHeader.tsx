@@ -24,7 +24,7 @@ export default function SectionHeader({
   };
 
   return (
-    <div className={`max-w-3xl ${alignmentClasses[alignment]} mb-14 md:mb-20`}>
+    <div className={`max-w-3xl ${alignmentClasses[alignment]} mb-10 md:mb-12`}>
       {tag && (
         <motion.span
           initial={{ opacity: 0, y: 20 }}

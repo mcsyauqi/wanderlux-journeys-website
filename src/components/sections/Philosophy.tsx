@@ -51,8 +51,8 @@ export default function Philosophy() {
       </motion.div>
       <div className="absolute inset-0 bg-navy/75" />
 
-      <div className="container relative px-6">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <div className="container relative">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column - Text */}
           <div>
             <motion.span

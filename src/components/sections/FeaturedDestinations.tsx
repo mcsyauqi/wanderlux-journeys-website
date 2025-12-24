@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import DestinationCard from "@/components/ui/DestinationCard";
@@ -24,8 +24,8 @@ export default function FeaturedDestinations() {
 
   return (
     <section className="section bg-sand overflow-hidden">
-      <div className="container px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+      <div className="container">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <SectionHeader
             tag="Featured Destinations"
             title="Discover Extraordinary Places"
@@ -33,7 +33,7 @@ export default function FeaturedDestinations() {
             alignment="left"
           />
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 flex-shrink-0">
             <button
               onClick={() => scroll("left")}
               className="p-3 border border-navy/20 text-navy hover:bg-navy hover:text-white transition-colors"
@@ -55,7 +55,7 @@ export default function FeaturedDestinations() {
       {/* Horizontal Scroll */}
       <div
         ref={scrollRef}
-        className="horizontal-scroll pl-[max(1.5rem,calc((100vw-1400px)/2+2rem))] pr-8"
+        className="horizontal-scroll"
       >
         {destinations.map((destination, index) => (
           <DestinationCard
@@ -71,7 +71,7 @@ export default function FeaturedDestinations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex-shrink-0 w-[300px] md:w-[350px] aspect-[3/4] bg-navy flex flex-col items-center justify-center text-center p-8 group cursor-pointer"
+          className="flex-shrink-0 w-[280px] md:w-[320px] aspect-[3/4] bg-navy flex flex-col items-center justify-center text-center p-8 group cursor-pointer"
         >
           <Link href="/destinations" className="flex flex-col items-center">
             <div className="w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-6 group-hover:bg-gold transition-colors">
@@ -80,8 +80,8 @@ export default function FeaturedDestinations() {
             <h4 className="text-white text-2xl font-heading mb-3">
               View All Destinations
             </h4>
-            <p className="text-white/90 font-body">
-              Explore our complete collection of extraordinary places
+            <p className="text-white/90 font-body text-sm">
+              Explore our complete collection
             </p>
           </Link>
         </motion.div>

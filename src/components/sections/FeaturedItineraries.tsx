@@ -12,14 +12,14 @@ export default function FeaturedItineraries() {
 
   return (
     <section className="section bg-sand">
-      <div className="container px-6">
+      <div className="container">
         <SectionHeader
           tag="Curated Itineraries"
           title="Ready-to-Book Journeys"
           subtitle="Expertly designed travel experiences, ready for you to embark on. Each itinerary can be customized to your preferences."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {itineraries.map((itinerary, index) => (
             <motion.div
               key={itinerary.id}

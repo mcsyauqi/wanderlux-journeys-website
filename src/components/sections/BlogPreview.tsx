@@ -20,14 +20,14 @@ export default function BlogPreview() {
 
   return (
     <section className="section bg-white">
-      <div className="container px-6">
+      <div className="container">
         <SectionHeader
           tag="Travel Inspiration"
           title="Stories & Insights"
           subtitle="Discover travel tips, hidden gems, and inspiring stories from our journeys around the world."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {posts.slice(0, 3).map((post, index) => (
             <motion.article
               key={post.id}

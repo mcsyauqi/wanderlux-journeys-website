@@ -24,7 +24,7 @@ export default function Testimonials() {
 
   return (
     <section className="section bg-ivory">
-      <div className="container px-6">
+      <div className="container">
         <SectionHeader
           tag="Testimonials"
           title="Stories From Our Travelers"

@@ -30,14 +30,14 @@ export default function ExperienceTypes() {
 
   return (
     <section className="section bg-ivory">
-      <div className="container px-6">
+      <div className="container">
         <SectionHeader
           tag="Curated Experiences"
           title="How Will You Travel?"
           subtitle="From private guided tours to wellness retreats, we craft experiences that transform the way you see the world."
         />
 
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Experience Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

@@ -57,7 +57,7 @@ export default function Footer() {
       {/* Newsletter Section */}
       <div className="border-b border-white/20">
         <div className="container py-20">
-          <div className="max-w-4xl mx-auto text-center px-6">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -107,8 +107,8 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="container py-20 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-10">
+      <div className="container py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
@@ -223,7 +223,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/20">
-        <div className="container py-8 px-6">
+        <div className="container py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <p className="text-white/70 text-sm">

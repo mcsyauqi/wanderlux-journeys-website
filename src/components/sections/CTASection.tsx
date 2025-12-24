@@ -21,8 +21,8 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/85" />
       </div>
 
-      <div className="container relative px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="container relative">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left - Content */}
           <div>
             <motion.span

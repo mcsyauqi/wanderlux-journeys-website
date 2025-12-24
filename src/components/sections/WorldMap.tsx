@@ -28,7 +28,7 @@ export default function WorldMap() {
 
   return (
     <section className="section bg-navy overflow-hidden">
-      <div className="container px-6">
+      <div className="container">
         <SectionHeader
           tag="Explore the World"
           title="Our Destinations"
