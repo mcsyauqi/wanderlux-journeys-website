@@ -18,7 +18,7 @@ export default function CTASection() {
           className="object-cover"
           unoptimized
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/85" />
       </div>
 
       <div className="container relative">
@@ -50,7 +50,7 @@ export default function CTASection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-white/80 text-lg font-body mb-8 max-w-xl"
+              className="text-white text-lg font-body mb-8 max-w-xl"
             >
               Let our expert travel designers craft your perfect journey. Share
               your dreams with us, and we&apos;ll create an experience that
@@ -97,7 +97,7 @@ export default function CTASection() {
             <h3 className="text-white text-2xl font-heading mb-6">
               Speak to a Travel Expert
             </h3>
-            <p className="text-white/70 font-body mb-8">
+            <p className="text-white/90 font-body mb-8">
               Our team is available 7 days a week to help you plan your perfect
               getaway.
             </p>
@@ -112,7 +112,7 @@ export default function CTASection() {
                   <Phone className="text-white" size={24} />
                 </div>
                 <div>
-                  <p className="text-white/60 text-sm font-body mb-1">
+                  <p className="text-white/80 text-sm font-body mb-1">
                     Call us anytime
                   </p>
                   <p className="text-white text-lg font-body group-hover:text-gold transition-colors">
@@ -130,7 +130,7 @@ export default function CTASection() {
                   <Mail className="text-white" size={24} />
                 </div>
                 <div>
-                  <p className="text-white/60 text-sm font-body mb-1">
+                  <p className="text-white/80 text-sm font-body mb-1">
                     Email us
                   </p>
                   <p className="text-white text-lg font-body group-hover:text-gold transition-colors">
@@ -150,7 +150,7 @@ export default function CTASection() {
                   <MessageCircle className="text-white" size={24} />
                 </div>
                 <div>
-                  <p className="text-white/60 text-sm font-body mb-1">
+                  <p className="text-white/80 text-sm font-body mb-1">
                     Message on WhatsApp
                   </p>
                   <p className="text-white text-lg font-body group-hover:text-gold transition-colors">
@@ -161,8 +161,8 @@ export default function CTASection() {
             </div>
 
             {/* Availability */}
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <p className="text-white/60 text-sm font-body text-center">
+            <div className="mt-8 pt-6 border-t border-white/30">
+              <p className="text-white/80 text-sm font-body text-center">
                 Available Monday - Sunday, 9am - 9pm EST
               </p>
             </div>

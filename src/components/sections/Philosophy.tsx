@@ -49,7 +49,7 @@ export default function Philosophy() {
           unoptimized
         />
       </motion.div>
-      <div className="absolute inset-0 bg-navy/85" />
+      <div className="absolute inset-0 bg-navy/75" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -89,7 +89,7 @@ export default function Philosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-white/80 text-lg font-body mb-8 leading-relaxed"
+              className="text-white text-lg font-body mb-8 leading-relaxed"
             >
               At Wanderlux Journeys, we believe travel should be transformative.
               Our team of expert travel designers works closely with you to
@@ -102,7 +102,7 @@ export default function Philosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-white/70 font-body mb-8"
+              className="text-white/90 font-body mb-8"
             >
               With over 15 years of experience and partnerships with the
               world&apos;s finest hotels, guides, and local experts, we handle
@@ -120,19 +120,19 @@ export default function Philosophy() {
             >
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">15+</p>
-                <p className="text-white/60 text-sm font-body">
+                <p className="text-white/80 text-sm font-body">
                   Years Experience
                 </p>
               </div>
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">50+</p>
-                <p className="text-white/60 text-sm font-body">
+                <p className="text-white/80 text-sm font-body">
                   Destinations
                 </p>
               </div>
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">98%</p>
-                <p className="text-white/60 text-sm font-body">
+                <p className="text-white/80 text-sm font-body">
                   Client Satisfaction
                 </p>
               </div>
@@ -158,7 +158,7 @@ export default function Philosophy() {
                     <h4 className="text-white text-xl font-heading mb-2">
                       {pillar.title}
                     </h4>
-                    <p className="text-white/70 font-body text-sm">
+                    <p className="text-white/90 font-body text-sm">
                       {pillar.description}
                     </p>
                   </div>

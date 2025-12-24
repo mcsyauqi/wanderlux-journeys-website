@@ -113,21 +113,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="max-w-2xl mx-auto mb-8"
+            className="w-full flex justify-center mb-8"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-2xl">
               <input
                 type="text"
                 placeholder="Where do you dream of going?"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full py-4 px-6 pl-14 bg-white/10 backdrop-blur-md border border-white/30 text-white placeholder:text-white/60 focus:bg-white/20 focus:border-gold text-lg"
+                className="w-full py-4 px-6 pl-14 pr-32 bg-white/10 backdrop-blur-md border border-white/30 text-white placeholder:text-white/60 focus:bg-white/20 focus:border-gold text-lg"
               />
               <Search
                 className="absolute left-5 top-1/2 -translate-y-1/2 text-white/60"
                 size={22}
               />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-white px-6 py-2 font-body font-semibold uppercase text-sm tracking-wider hover:bg-gold-dark transition-colors">
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 bg-gold text-white px-6 py-2 font-body font-semibold uppercase text-sm tracking-wider hover:bg-gold-dark transition-colors">
                 Explore
               </button>
             </div>

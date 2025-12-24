@@ -59,20 +59,20 @@ export default function DestinationCard({
         <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
 
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
           {/* Location Tag */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-1.5 text-gold text-sm font-body mb-2"
+            className="flex items-center gap-2 text-gold text-sm font-body mb-3"
           >
             <MapPin size={14} />
             <span>{destination.country}</span>
           </motion.div>
 
           {/* Title */}
-          <h3 className="text-white text-2xl md:text-3xl font-heading mb-2">
+          <h3 className="text-white text-2xl md:text-3xl font-heading mb-3">
             {destination.name}
           </h3>
 

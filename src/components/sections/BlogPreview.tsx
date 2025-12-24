@@ -35,7 +35,7 @@ export default function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-ivory p-4 hover:shadow-lg transition-shadow duration-300"
+              className="group bg-ivory p-6 hover:shadow-lg transition-shadow duration-300"
             >
               <Link href={`/blog/${post.slug}`}>
                 {/* Image */}
@@ -67,7 +67,7 @@ export default function BlogPreview() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-navy text-xl mb-3 group-hover:text-teal transition-colors">
+                <h3 className="text-navy text-xl mb-3 group-hover:text-teal transition-colors px-1">
                   {post.title}
                 </h3>
 
