@@ -30,14 +30,14 @@ export default function ExperienceTypes() {
 
   return (
     <section className="section bg-ivory">
-      <div className="container">
+      <div className="container px-6">
         <SectionHeader
           tag="Curated Experiences"
           title="How Will You Travel?"
           subtitle="From private guided tours to wellness retreats, we craft experiences that transform the way you see the world."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           {/* Experience Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -76,7 +76,7 @@ export default function ExperienceTypes() {
               <h3 className="text-white text-3xl mb-3">
                 {activeExperience.name}
               </h3>
-              <p className="text-white/80 font-body mb-4">
+              <p className="text-white font-body mb-4">
                 {activeExperience.tagline}
               </p>
               <Link

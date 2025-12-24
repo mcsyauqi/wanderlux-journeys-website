@@ -27,9 +27,9 @@
   --muted: var(--sand-light);
 
   /* Spacing */
-  --section-padding: clamp(4rem, 10vw, 8rem);
+  --section-padding: clamp(5rem, 10vw, 8rem);
   --container-max: 1400px;
-  --container-padding: clamp(1rem, 5vw, 3rem);
+  --container-padding: clamp(1.5rem, 5vw, 4rem);
 }
 
 @theme inline {
@@ -217,11 +217,25 @@ p {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+/* Ensure proper padding on all screen sizes */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 /* Section Styling */
 .section {
   padding: var(--section-padding) 0;
+}
+
+/* Ensure sections have proper internal padding */
+.section .container {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 /* Section centered content */

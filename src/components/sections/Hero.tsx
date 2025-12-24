@@ -101,7 +101,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-white/80 text-lg md:text-xl font-body max-w-2xl mx-auto mb-10"
+            className="text-white text-lg md:text-xl font-body max-w-2xl mx-auto mb-10"
           >
             We craft bespoke travel experiences for those who seek the
             extraordinary. Let us guide you to the world&apos;s most exclusive
@@ -179,7 +179,7 @@ export default function Hero() {
           className="absolute bottom-32 left-8 hidden lg:flex items-center gap-3"
         >
           <MapPin size={18} className="text-gold" />
-          <span className="text-white/80 font-body text-sm">
+          <span className="text-white font-body text-sm">
             {heroImages[currentSlide].destination}
           </span>
         </motion.div>

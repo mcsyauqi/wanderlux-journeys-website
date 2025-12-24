@@ -51,8 +51,8 @@ export default function Philosophy() {
       </motion.div>
       <div className="absolute inset-0 bg-navy/75" />
 
-      <div className="container relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container relative px-6">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           {/* Left Column - Text */}
           <div>
             <motion.span
@@ -120,19 +120,19 @@ export default function Philosophy() {
             >
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">15+</p>
-                <p className="text-white/80 text-sm font-body">
+                <p className="text-white/90 text-sm font-body">
                   Years Experience
                 </p>
               </div>
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">50+</p>
-                <p className="text-white/80 text-sm font-body">
+                <p className="text-white/90 text-sm font-body">
                   Destinations
                 </p>
               </div>
               <div>
                 <p className="text-4xl font-heading text-gold mb-1">98%</p>
-                <p className="text-white/80 text-sm font-body">
+                <p className="text-white/90 text-sm font-body">
                   Client Satisfaction
                 </p>
               </div>

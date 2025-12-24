@@ -77,7 +77,7 @@ export default function DestinationCard({
           </h3>
 
           {/* Tagline */}
-          <p className="text-white/80 text-sm md:text-base font-body mb-4 line-clamp-2">
+          <p className="text-white text-sm md:text-base font-body mb-4 line-clamp-2">
             {destination.tagline}
           </p>
 

@@ -57,7 +57,7 @@ export default function Footer() {
       {/* Newsletter Section */}
       <div className="border-b border-white/20">
         <div className="container py-20">
-          <div className="max-w-4xl mx-auto text-center px-4">
+          <div className="max-w-4xl mx-auto text-center px-6">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-white/15 border border-white/30 text-white placeholder:text-white/60 focus:border-gold focus:bg-white/20 py-4 px-6"
+                className="flex-1 bg-white/15 border border-white/30 text-white placeholder:text-white/70 focus:border-gold focus:bg-white/20 py-4 px-6"
               />
               <button type="submit" className="btn-primary whitespace-nowrap flex items-center justify-center">
                 Subscribe

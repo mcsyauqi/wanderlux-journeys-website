@@ -24,8 +24,8 @@ export default function FeaturedDestinations() {
 
   return (
     <section className="section bg-sand overflow-hidden">
-      <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+      <div className="container px-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <SectionHeader
             tag="Featured Destinations"
             title="Discover Extraordinary Places"
@@ -55,7 +55,7 @@ export default function FeaturedDestinations() {
       {/* Horizontal Scroll */}
       <div
         ref={scrollRef}
-        className="horizontal-scroll pl-[max(1rem,calc((100vw-1400px)/2+1rem))] pr-8"
+        className="horizontal-scroll pl-[max(1.5rem,calc((100vw-1400px)/2+2rem))] pr-8"
       >
         {destinations.map((destination, index) => (
           <DestinationCard
@@ -80,7 +80,7 @@ export default function FeaturedDestinations() {
             <h4 className="text-white text-2xl font-heading mb-3">
               View All Destinations
             </h4>
-            <p className="text-white/60 font-body">
+            <p className="text-white/90 font-body">
               Explore our complete collection of extraordinary places
             </p>
           </Link>

@@ -24,7 +24,7 @@ export default function Testimonials() {
 
   return (
     <section className="section bg-ivory">
-      <div className="container">
+      <div className="container px-6">
         <SectionHeader
           tag="Testimonials"
           title="Stories From Our Travelers"
@@ -44,7 +44,7 @@ export default function Testimonials() {
             </motion.div>
 
             {/* Testimonial Card */}
-            <div className="bg-white pt-12 pb-8 px-8 md:px-16 text-center shadow-xl border border-sand-medium">
+            <div className="bg-white pt-14 pb-10 px-8 md:px-16 text-center shadow-xl border border-sand-medium">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentTestimonial.id}

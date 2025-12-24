@@ -28,7 +28,7 @@ export default function WorldMap() {
 
   return (
     <section className="section bg-navy overflow-hidden">
-      <div className="container">
+      <div className="container px-6">
         <SectionHeader
           tag="Explore the World"
           title="Our Destinations"
@@ -215,7 +215,7 @@ export default function WorldMap() {
                   className={`flex items-center gap-2 px-4 py-2 transition-all ${
                     isActive
                       ? "bg-gold text-white"
-                      : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+                      : "bg-white/15 text-white/90 hover:bg-white/25 hover:text-white"
                   }`}
                 >
                   <MapPin size={14} />
