@@ -17,20 +17,20 @@ export default function SectionHeader({
   alignment = "center",
   light = false,
 }: SectionHeaderProps) {
-  const alignmentClasses = {
+  const alignClass = {
     left: "text-left",
     center: "text-center mx-auto",
     right: "text-right ml-auto",
   };
 
   return (
-    <div className={`max-w-3xl ${alignmentClasses[alignment]} mb-10 md:mb-12`}>
+    <div className={`max-w-3xl ${alignClass[alignment]} mb-12`}>
       {tag && (
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-tag inline-block mb-4"
+          className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4 block"
         >
           {tag}
         </motion.span>
@@ -56,16 +56,12 @@ export default function SectionHeader({
         </motion.p>
       )}
       <motion.div
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1 }}
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className={`gold-line mt-6 ${
-          alignment === "center"
-            ? "mx-auto"
-            : alignment === "right"
-              ? "ml-auto"
-              : ""
+        className={`w-16 h-0.5 bg-gold mt-6 ${
+          alignment === "center" ? "mx-auto" : alignment === "right" ? "ml-auto" : ""
         }`}
       />
     </div>
