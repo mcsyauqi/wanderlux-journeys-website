@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-forest: #2D4739;
+  --color-gold: #B8860B;
+  --color-sand: #F5F1EB;
+  --color-charcoal: #2C2C2C;
+  --color-slate: #64748B;
+  --color-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2C2C2C;
+  background: #FFFFFF;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2C2C2C;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
