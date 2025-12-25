@@ -1,69 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 interface SectionHeaderProps {
+  eyebrow?: string;
   tag?: string;
   title: string;
+  description?: string;
   subtitle?: string;
-  alignment?: "left" | "center" | "right";
+  centered?: boolean;
   light?: boolean;
 }
 
 export default function SectionHeader({
+  eyebrow,
   tag,
   title,
+  description,
   subtitle,
-  alignment = "center",
+  centered = true,
   light = false,
 }: SectionHeaderProps) {
-  const alignClass = {
-    left: "text-left",
-    center: "text-center mx-auto",
-    right: "text-right ml-auto",
-  };
+  const tagText = eyebrow || tag;
+  const descText = description || subtitle;
 
   return (
-    <div className={`max-w-3xl ${alignClass[alignment]} mb-12`}>
-      {tag && (
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4 block"
-        >
-          {tag}
-        </motion.span>
+    <div className={centered ? "text-center mb-16" : "mb-12"}>
+      {tagText && (
+        <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+          {tagText}
+        </p>
       )}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className={light ? "text-white" : "text-navy"}
-      >
-        {title}
-      </motion.h2>
-      {subtitle && (
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className={`mt-4 text-lg ${light ? "text-white/80" : "text-navy-light"}`}
+      <h2 className={light ? "text-white mb-4" : "text-navy mb-4"}>{title}</h2>
+      <div className={`w-16 h-0.5 bg-gold ${centered ? "mx-auto" : ""} ${descText ? "mb-6" : ""}`} />
+      {descText && (
+        <p
+          className={`text-lg max-w-2xl ${centered ? "mx-auto" : ""} ${
+            light ? "text-white/80" : "text-navy-light"
+          }`}
         >
-          {subtitle}
-        </motion.p>
+          {descText}
+        </p>
       )}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className={`w-16 h-0.5 bg-gold mt-6 ${
-          alignment === "center" ? "mx-auto" : alignment === "right" ? "ml-auto" : ""
-        }`}
-      />
     </div>
   );
 }

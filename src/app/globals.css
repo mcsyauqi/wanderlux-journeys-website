@@ -1,57 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --teal: #0D9488;
-  --teal-dark: #0F766E;
-  --gold: #D4AF37;
-  --navy: #1E3A5F;
-  --navy-light: #4A6B8A;
-  --sand: #F5F0E8;
-  --ivory: #FEFEF9;
-}
-
+/* Tailwind v4 Theme Configuration */
 @theme inline {
-  --color-teal: var(--teal);
-  --color-teal-dark: var(--teal-dark);
-  --color-gold: var(--gold);
-  --color-navy: var(--navy);
-  --color-navy-light: var(--navy-light);
-  --color-sand: var(--sand);
-  --color-ivory: var(--ivory);
+  --color-teal: #0D9488;
+  --color-teal-dark: #0F766E;
+  --color-gold: #D4AF37;
+  --color-navy: #1E3A5F;
+  --color-navy-light: #5A7A9A;
+  --color-sand: #F5F0E8;
+  --color-ivory: #FEFDFB;
+  --color-white: #FFFFFF;
+
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Base Styles */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Source Sans 3', -apple-system, sans-serif;
-  background: var(--ivory);
-  color: var(--navy);
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: var(--color-navy);
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   font-weight: 500;
   line-height: 1.2;
-  color: var(--navy);
-}
-
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
-
-p {
-  color: var(--navy-light);
-  font-size: 1.0625rem;
+  color: var(--color-navy);
 }
 
 a {
@@ -62,10 +43,26 @@ a {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 ::selection {
-  background: var(--teal);
+  background-color: var(--color-teal);
   color: white;
+}
+
+/* Utility Classes */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
 }

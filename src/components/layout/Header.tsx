@@ -2,141 +2,98 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-const navigation = [
-  { name: "Destinations", href: "/destinations" },
-  { name: "Experiences", href: "/experiences" },
-  { name: "Honeymoons", href: "/honeymoons" },
-  { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
+const navLinks = [
+  { label: "Destinations", href: "/destinations" },
+  { label: "Experiences", href: "/experiences" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const headerBg = scrolled ? "bg-white shadow-md" : "bg-transparent";
+  const textColor = scrolled ? "text-navy" : "text-white";
+  const logoColor = scrolled ? "text-navy" : "text-white";
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-md py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="relative z-10">
-          <span
-            className={`text-2xl font-serif ${
-              isScrolled || isMobileMenuOpen ? "text-navy" : "text-white"
-            }`}
-          >
-            Wanderlux
-          </span>
-          <span
-            className={`block text-[10px] uppercase tracking-[0.25em] ${
-              isScrolled || isMobileMenuOpen ? "text-gold" : "text-gold"
-            }`}
-          >
-            Journeys
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-teal ${
-                isScrolled ? "text-navy" : "text-white"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-6">
-          <a
-            href="tel:+1234567890"
-            className={`flex items-center gap-2 text-sm transition-colors hover:text-teal ${
-              isScrolled ? "text-navy" : "text-white"
-            }`}
-          >
-            <Phone size={16} />
-            <span className="hidden xl:inline">+1 (234) 567-890</span>
-          </a>
-          <Link
-            href="/plan-your-trip"
-            className="bg-teal text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-teal-dark transition-colors"
-          >
-            Plan Your Trip
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
+      <div className="wrapper">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex flex-col">
+            <span className={`text-2xl font-[family-name:var(--font-heading)] font-medium ${logoColor}`}>
+              Wanderlux
+            </span>
+            <span className="text-gold text-[10px] uppercase tracking-[0.3em]">
+              Journeys
+            </span>
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden p-2 ${
-            isScrolled || isMobileMenuOpen ? "text-navy" : "text-white"
-          }`}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium uppercase tracking-wider hover:text-teal transition-colors ${textColor}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/plan-your-trip"
+              className="bg-teal text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-teal-dark transition-colors"
+            >
+              Plan Your Trip
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`md:hidden p-2 ${textColor}`}
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-lg"
-          >
-            <nav className="max-w-6xl mx-auto px-6 py-6">
-              <div className="flex flex-col gap-2">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="py-3 text-navy text-lg border-b border-sand hover:text-teal transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-sand">
+          <div className="wrapper py-6">
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link) => (
                 <Link
-                  href="/plan-your-trip"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 bg-teal text-white text-center py-4 font-semibold uppercase tracking-wide hover:bg-teal-dark transition-colors"
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-navy text-lg py-2 border-b border-sand hover:text-teal transition-colors"
                 >
-                  Plan Your Trip
+                  {link.label}
                 </Link>
-                <a
-                  href="tel:+1234567890"
-                  className="flex items-center justify-center gap-2 py-3 text-gold"
-                >
-                  <Phone size={18} />
-                  +1 (234) 567-890
-                </a>
-              </div>
+              ))}
+              <Link
+                href="/plan-your-trip"
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 bg-teal text-white text-center py-4 font-semibold uppercase tracking-wider hover:bg-teal-dark transition-colors"
+              >
+                Plan Your Trip
+              </Link>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
