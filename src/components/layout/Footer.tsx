@@ -1,111 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      {/* Main Footer */}
-      <div className="wrapper py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-[family-name:var(--font-heading)] text-white">
-                Wanderlux
-              </span>
-              <span className="block text-gold text-[10px] uppercase tracking-[0.3em]">
-                Journeys
-              </span>
-            </Link>
-            <p className="text-white/70 text-sm mb-6 leading-relaxed">
-              Crafting extraordinary travel experiences for discerning travelers since 2009.
+            <h3 className="text-2xl font-['Cormorant_Garamond',Georgia,serif] mb-4">Wanderlux</h3>
+            <p className="text-white/60 text-sm">
+              Crafting extraordinary travel experiences since 2009.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-white/60 hover:text-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors">
-                <Twitter size={20} />
-              </a>
+          </div>
+
+          <div>
+            <h4 className="text-gold text-sm font-semibold mb-4">EXPLORE</h4>
+            <div className="flex flex-col gap-2">
+              <Link href="/destinations" className="text-white/60 text-sm hover:text-white">Destinations</Link>
+              <Link href="/experiences" className="text-white/60 text-sm hover:text-white">Experiences</Link>
+              <Link href="/honeymoons" className="text-white/60 text-sm hover:text-white">Honeymoons</Link>
             </div>
           </div>
 
-          {/* Destinations */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-6">
-              Destinations
-            </h4>
-            <ul className="space-y-3">
-              {["Europe", "Asia", "Africa", "Americas", "Oceania"].map((item) => (
-                <li key={item}>
-                  <Link href="/destinations" className="text-white/70 text-sm hover:text-gold transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="text-gold text-sm font-semibold mb-4">COMPANY</h4>
+            <div className="flex flex-col gap-2">
+              <Link href="/about" className="text-white/60 text-sm hover:text-white">About Us</Link>
+              <Link href="/blog" className="text-white/60 text-sm hover:text-white">Blog</Link>
+              <Link href="/plan-your-trip" className="text-white/60 text-sm hover:text-white">Contact</Link>
+            </div>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-6">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {["About Us", "Our Team", "Blog", "Careers"].map((item) => (
-                <li key={item}>
-                  <Link href="/about" className="text-white/70 text-sm hover:text-gold transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-6">
-              Contact
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="mailto:hello@wanderluxjourneys.com" className="flex items-center gap-3 text-white/70 text-sm hover:text-gold transition-colors">
-                  <Mail size={16} className="flex-shrink-0" />
-                  <span>hello@wanderluxjourneys.com</span>
-                </a>
-              </li>
-              <li>
-                <a href="tel:+1234567890" className="flex items-center gap-3 text-white/70 text-sm hover:text-gold transition-colors">
-                  <Phone size={16} className="flex-shrink-0" />
-                  <span>+1 (234) 567-890</span>
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-white/70 text-sm">
-                <MapPin size={16} className="flex-shrink-0 mt-0.5" />
-                <span>123 Luxury Lane, Suite 500<br />New York, NY 10001</span>
-              </li>
-            </ul>
+            <h4 className="text-gold text-sm font-semibold mb-4">CONTACT</h4>
+            <p className="text-white/60 text-sm">hello@wanderlux.com</p>
+            <p className="text-white/60 text-sm">+1 (555) 123-4567</p>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="wrapper py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-            <p>&copy; {new Date().getFullYear()} Wanderlux Journeys. All rights reserved.</p>
-            <p>
-              Created by{" "}
-              <a href="https://creativism.id" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
-                Creativism Digital Marketing
-              </a>
-            </p>
-          </div>
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/40 text-sm">
+            © 2024 Wanderlux Journeys. All rights reserved.
+          </p>
+          <p className="text-white/40 text-sm">
+            Created by Creativism Digital Marketing
+          </p>
         </div>
       </div>
     </footer>

@@ -23,20 +23,15 @@ export default function SectionHeader({
   const descText = description || subtitle;
 
   return (
-    <div className={centered ? "text-center mb-16" : "mb-12"}>
+    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       {tagText && (
-        <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-          {tagText}
+        <p className="text-gold text-sm font-semibold tracking-widest mb-4">
+          {tagText.toUpperCase()}
         </p>
       )}
-      <h2 className={light ? "text-white mb-4" : "text-navy mb-4"}>{title}</h2>
-      <div className={`w-16 h-0.5 bg-gold ${centered ? "mx-auto" : ""} ${descText ? "mb-6" : ""}`} />
+      <h2 className={`text-4xl ${light ? "text-white" : "text-navy"}`}>{title}</h2>
       {descText && (
-        <p
-          className={`text-lg max-w-2xl ${centered ? "mx-auto" : ""} ${
-            light ? "text-white/80" : "text-navy-light"
-          }`}
-        >
+        <p className={`text-lg mt-4 max-w-2xl ${centered ? "mx-auto" : ""} ${light ? "text-white/70" : "text-navy-light"}`}>
           {descText}
         </p>
       )}

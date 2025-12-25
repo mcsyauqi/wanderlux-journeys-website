@@ -31,26 +31,23 @@ export default function Button({
   onClick,
   className = "",
 }: ButtonProps) {
-  const baseStyles =
-    "inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-wider transition-colors";
+  const base = "inline-flex items-center justify-center gap-2 font-semibold tracking-wide transition-colors";
 
-  const variants = {
+  const variants: Record<string, string> = {
     primary: "bg-teal text-white hover:bg-teal-dark",
     secondary: "bg-navy text-white hover:bg-navy-light",
     outline: "border-2 border-gold text-gold hover:bg-gold hover:text-white",
     gold: "bg-gold text-white hover:bg-gold/90",
-    ghost: "text-navy hover:text-teal bg-transparent",
+    ghost: "text-navy hover:text-teal",
   };
 
-  const sizes = {
+  const sizes: Record<string, string> = {
     sm: "px-4 py-2 text-xs",
     md: "px-6 py-3 text-sm",
     lg: "px-8 py-4 text-sm",
   };
 
-  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${
-    disabled || isLoading ? "opacity-50 cursor-not-allowed" : ""
-  } ${className}`;
+  const classes = `${base} ${variants[variant]} ${sizes[size]} ${disabled || isLoading ? "opacity-50 cursor-not-allowed" : ""} ${className}`;
 
   const renderIcon = () => {
     if (isLoading) return null;
@@ -59,31 +56,22 @@ export default function Button({
     return null;
   };
 
-  const iconElement = renderIcon();
+  const iconEl = renderIcon();
   const content = (
     <>
       {isLoading && <Loader2 size={16} className="animate-spin" />}
-      {iconPosition === "left" && iconElement}
+      {iconPosition === "left" && iconEl}
       {children}
-      {iconPosition === "right" && iconElement}
+      {iconPosition === "right" && iconEl}
     </>
   );
 
   if (href && !disabled && !isLoading) {
-    return (
-      <Link href={href} className={classes}>
-        {content}
-      </Link>
-    );
+    return <Link href={href} className={classes}>{content}</Link>;
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled || isLoading}
-      className={classes}
-    >
+    <button type={type} onClick={onClick} disabled={disabled || isLoading} className={classes}>
       {content}
     </button>
   );

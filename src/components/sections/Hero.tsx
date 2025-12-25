@@ -2,54 +2,50 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1920&q=80"
-          alt="Santorini"
-          fill
-          className="object-cover"
-          priority
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-navy/50" />
-      </div>
-
-      {/* Content */}
-      <div className="relative wrapper">
-        <div className="max-w-2xl">
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-6">
-            Luxury Travel Experiences
+    <section className="min-h-screen pt-20 bg-sand">
+      <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p className="text-gold text-sm font-semibold tracking-widest mb-6">
+            LUXURY TRAVEL EXPERIENCES
           </p>
-
-          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-heading)] font-medium mb-6 leading-tight">
-            Journey Beyond <span className="text-gold">Ordinary</span>
+          <h1 className="text-5xl lg:text-6xl text-navy mb-6 leading-tight">
+            Discover Your Next
+            <span className="text-teal block">Adventure</span>
           </h1>
-
-          <p className="text-white/90 text-lg md:text-xl mb-10 leading-relaxed max-w-xl">
-            Discover the world's most extraordinary destinations with bespoke travel experiences crafted for discerning travelers.
+          <p className="text-navy-light text-lg mb-10 max-w-md">
+            Bespoke journeys to the world's most extraordinary destinations, crafted exclusively for you.
           </p>
-
           <div className="flex flex-wrap gap-4">
             <Link
               href="/plan-your-trip"
-              className="inline-flex items-center gap-3 bg-teal text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-teal-dark transition-colors"
+              className="bg-teal text-white px-8 py-4 font-semibold text-sm tracking-wide hover:bg-teal-dark"
             >
-              Plan Your Journey
-              <ArrowRight size={18} />
+              START PLANNING
             </Link>
             <Link
               href="/destinations"
-              className="inline-flex items-center gap-3 border-2 border-white text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-navy transition-colors"
+              className="border-2 border-navy text-navy px-8 py-4 font-semibold text-sm tracking-wide hover:bg-navy hover:text-white"
             >
-              Explore Destinations
+              VIEW DESTINATIONS
             </Link>
           </div>
+        </div>
+
+        <div className="relative">
+          <div className="aspect-[4/5] relative">
+            <Image
+              src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80"
+              alt="Santorini"
+              fill
+              className="object-cover"
+              priority
+              unoptimized
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-gold/20 -z-10" />
         </div>
       </div>
     </section>

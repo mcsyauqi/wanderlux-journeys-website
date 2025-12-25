@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
 
-const destinations = [
+const places = [
   {
     name: "Santorini",
     country: "Greece",
@@ -33,57 +32,40 @@ const destinations = [
 
 export default function Destinations() {
   return (
-    <section className="py-24 md:py-32 bg-sand">
-      <div className="wrapper">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-            Featured Destinations
-          </p>
-          <h2 className="text-navy mb-4">
-            Explore Extraordinary Places
-          </h2>
-          <div className="w-16 h-0.5 bg-gold mx-auto" />
+    <section className="bg-sand py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div>
+            <p className="text-gold text-sm font-semibold tracking-widest mb-4">DESTINATIONS</p>
+            <h2 className="text-4xl text-navy">Popular Destinations</h2>
+          </div>
+          <Link
+            href="/destinations"
+            className="text-teal font-semibold text-sm tracking-wide mt-4 md:mt-0 hover:text-teal-dark"
+          >
+            VIEW ALL →
+          </Link>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {destinations.map((dest) => (
-            <Link
-              key={dest.slug}
-              href={`/destinations/${dest.slug}`}
-              className="group block"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden mb-4">
+          {places.map((place) => (
+            <Link key={place.slug} href={`/destinations/${place.slug}`} className="group">
+              <div className="aspect-[3/4] relative overflow-hidden mb-4">
                 <Image
-                  src={dest.image}
-                  alt={dest.name}
+                  src={place.image}
+                  alt={place.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-center gap-2 text-gold text-sm mb-2">
-                    <MapPin size={14} />
-                    <span>{dest.country}</span>
-                  </div>
-                  <h3 className="text-white text-xl">{dest.name}</h3>
+                  <p className="text-gold text-sm mb-1">{place.country}</p>
+                  <h3 className="text-white text-xl">{place.name}</h3>
                 </div>
               </div>
             </Link>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link
-            href="/destinations"
-            className="inline-flex items-center gap-2 border-2 border-gold text-gold px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-gold hover:text-white transition-colors"
-          >
-            View All Destinations
-            <ArrowRight size={16} />
-          </Link>
         </div>
       </div>
     </section>
